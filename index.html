@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- Aluno: Igor Santos Chediack Pimenta Bueno -->
+<!-- Professor: Daniel Correa da Silva -->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestão de Funcionários</title>
+</head>
+<body>
+  <header>
+    <h1>Gestão de Funcionários</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Cadastro</h2>
+      <form id="form">
+        <p><label>Nome: <input type="text" name="nome" pattern=".*\S.*" title="Preencha com texto, não só espaços" required></label></p>
+        <p><label>Idade: <input type="number" name="idade" min="14" required></label></p>
+        <p><label>Cargo: <input type="text" name="cargo" pattern=".*\S.*" title="Preencha com texto, não só espaços" required></label></p>
+        <p><label>Salário: <input type="number" name="salario" min="0" step="0.01" required></label></p>
+        <button type="button" id="salvar">Cadastrar</button>
+        <button type="button" id="cancelar">Cancelar</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Funcionários</h2>
+      <p><label>Buscar por nome: <input type="text" id="busca"></label></p>
+      <table border="1">
+        <thead>
+          <tr><th>ID</th><th>Nome</th><th>Idade</th><th>Cargo</th><th>Salário</th><th>Ações</th></tr>
+        </thead>
+        <tbody id="corpo"></tbody>
+      </table>
+      <p id="vazio">Nenhum funcionário cadastrado.</p>
+    </section>
+
+    <section>
+      <h2>Relatórios</h2>
+      <button type="button" data-relatorio="altos">Salário acima de R$ 5.000</button>
+      <button type="button" data-relatorio="media">Média salarial</button>
+      <button type="button" data-relatorio="cargos">Cargos únicos</button>
+      <button type="button" data-relatorio="maiusculo">Nomes em maiúsculo</button>
+      <pre id="saida" aria-live="polite"></pre>
+    </section>
+  </main>
+
+  <script src="Funcionario.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
